@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Athalah Pratama</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Athalah Pratama</h1>
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">Tentang Saya</a>
+        <a href="portofolio.html">Portofolio</a>
+      </nav>
+    </div>
+  </header>
+
+<main class="container">
+  <!-- KOTAK PROFIL -->
+  <section class="card">
+    <img src="pict/fotoku.jpeg" alt="Foto Athalah" class="foto">
+    <h2>ATHALAH PRATAMA</h2>
+    <p class="npm">NPM: 2408007010024</p>
+    <p>Selamat Datang di Web Saya</p>
+  </section>
+
+  <!-- KOTAK HOBI -->
+  <section class="card">
+    <h3>Hobi Saya</h3>
+    <ul class="hobi-list">
+      <li onclick="toggleDetail('film')">🎬 Film</li>
+      <ul id="detail-film" class="hobi-detail">
+        <li data-img="pict/Cure-movie.jpg">Cure</li>
+        <li data-img="pict/Shawshank Redemption.jpg">The Shawshank Redemption</li>
+        <li data-img="pict/memories of murder.jpg">Memories of Murder</li>
+      </ul>
+
+      <li onclick="toggleDetail('game')">🎮 Game</li>
+      <ul id="detail-game" class="hobi-detail">
+        <li data-img="pict/ER poster.jpg">Elden Ring</li>
+        <li data-img="pict/ds3 poster.jpg">Dark Souls 3</li>
+        <li data-img="pict/bloodborne poster.jpg">Bloodborne</li>
+      </ul>
+
+      <li onclick="toggleDetail('musik')">🎵 Musik</li>
+      <ul id="detail-musik" class="hobi-detail">
+        <li data-img="pict/ok computer.jpg">Radiohead</li>
+        <li data-img="pict/mac demarco.jpg">Mac DeMarco</li>
+        <li data-img="pict/reality club.jpg">Reality Club</li>
+      </ul>
+    </ul>
+
+    <!-- tempat preview gambar -->
+    <div id="preview" class="preview-box">
+      <img id="preview-img" src="" alt="">
+    </div>
+  </section>
+</main>
+
+
+  <footer>
+    <p>© 2025 Athalah Pratama</p>
+  </footer>
+
+  <!-- file javascript eksternal -->
+  <script src="file.js"></script>
+</body>
+</html>

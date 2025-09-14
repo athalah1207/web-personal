@@ -1,0 +1,289 @@
+/* ===== Reset & Global ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Merriweather", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0b0b0b, #1a1a1a, #0f0f0f);
+  background-attachment: fixed;
+  color: #e6e6e6;
+  line-height: 1.6;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+a, button {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 6px #e63946; }
+  50% { box-shadow: 0 0 20px #e63946; }
+  100% { box-shadow: 0 0 6px #e63946; }
+}
+
+/* ===== Container ===== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+/* ===== Header & Navbar ===== */
+header {
+  background: rgba(20, 20, 20, 0.8);
+  padding: 15px 30px;
+  border-bottom: 2px solid #e63946;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: #e63946;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+header nav a {
+  margin: 0 15px;
+  padding: 5px 0;    /* kecilin padding atas-bawah biar gak terlalu tinggi */
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: #e6e6e6;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 15px;
+  padding: 6px 0;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: #e63946;
+  width: 0;
+  transition: width 0.3s ease;
+  margin-top: 5px;
+  border-radius: 2px;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #ff4d5a;
+  text-shadow: 0 0 8px rgba(230, 57, 70, 0.7);
+}
+
+/* ===== Card Style ===== */
+.card {
+  background: rgba(30, 30, 30, 0.9);
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 14px;
+  border: 1px solid #333;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 1s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 8px 28px rgba(230, 57, 70, 0.55);
+}
+
+.card h2,
+.card h3 {
+  color: #ff4d5a;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e63946;
+  padding-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== Foto ===== */
+.foto {
+  display: block;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 15px auto 25px auto;
+  border: 4px solid #e63946;
+  animation: glow 3s infinite;
+}
+
+/* ===== List & Table ===== */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  padding: 10px 12px;
+  border-bottom: 1px solid #444;
+  transition: color 0.3s, background 0.3s;
+  border-radius: 6px;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+ul li:hover {
+  color: #ff4d5a;
+  background: rgba(230, 57, 70, 0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #444;
+}
+
+table tr:hover {
+  background: rgba(230, 57, 70, 0.08);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  background: rgba(20, 20, 20, 0.9);
+  padding: 20px 0;
+  margin-top: 40px;
+  color: #aaa;
+  border-top: 2px solid #e63946;
+  font-size: 14px;
+  letter-spacing: 1px;
+  backdrop-filter: blur(8px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 20px;
+  }
+
+  header h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .foto {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* ===== Hobi Section ===== */
+.card {
+  background: #1a1a1a;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+.hobi-detail {
+  display: none;
+  margin: 10px 0 15px 25px;
+  padding: 12px;
+  background: #222;
+  border-radius: 8px;
+  list-style-type: square;
+}
+
+.hobi-detail.active {
+  display: block;
+}
+
+.preview-box {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.preview-box img {
+  max-width: 160px; /* kecilin gambar */
+  border-radius: 8px;
+  border: 2px solid #e63946;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.hobi-img {
+  max-width: 100%;
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  display: block;
+}
+
+/* Hover preview image */
+.hobi-list li::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 110%;
+  transform: translateY(-50%);
+  width: 180px;
+  height: 250px;
+  background-image: var(--hover-img);
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #e63946;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 20;
+}
+
+.hobi-list li:hover::after {
+  opacity: 1;
+}
